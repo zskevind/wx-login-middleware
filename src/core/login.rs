@@ -42,7 +42,7 @@ pub struct WxLoginInfoInner {
     pub sig_authed: bool,
 }
 
-/// The authentication result for login status. 
+/// The authentication result for login status.
 #[derive(Debug, Clone)]
 pub struct WxLoginInfo(Arc<WxLoginInfoInner>);
 impl WxLoginInfo {
@@ -60,7 +60,7 @@ impl std::ops::Deref for WxLoginInfo {
 /// The core struct for login and authentication process.
 #[derive(Debug, Clone)]
 pub struct WxLogin {
-    cfg: Arc<Config>,
+    pub cfg: Arc<Config>,
 }
 
 impl WxLogin {

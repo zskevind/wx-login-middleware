@@ -105,7 +105,8 @@ where
         let myself = (*self).clone();
 
         Box::pin(async move {
-            if req.uri().path() == "/login" {
+            // if req.uri().path() == "/login" {
+            if req.uri().path() == myself.wx_login.cfg.login_path {
                 let LoginRequest { appid, code } = match match req.method() {
                     &http::Method::GET => web::Query::<LoginRequest>::extract(req.request())
                         .await
